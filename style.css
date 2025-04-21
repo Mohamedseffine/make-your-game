@@ -1,0 +1,285 @@
+/* General body styling */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0a1a;
+    font-family: 'Orbitron', Arial, sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Main container */
+#container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    height: 80vh;
+    min-height: 500px;
+    background-color: #121225;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 100, 255, 0.3);
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #334477;
+}
+
+/* Game board styling */
+#board {
+    position: relative;
+    width: 95%;
+    height: 90%;
+    margin: 2% auto;
+    background-color: #000033;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #445588;
+    box-shadow: inset 0 0 20px rgba(0, 50, 150, 0.5);
+}
+
+/* Ship styling */
+#ship {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 50px;
+    height: 30px;
+    z-index: 10;
+    transition: left 0.1s ease;
+    image-rendering: pixelated;
+}
+
+/* Aliens container */
+#aliens {
+    width: 100%;
+    height: 60%;
+    position: relative;
+}
+
+/* Individual alien container */
+.alien-cont {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+
+/* Alien styling */
+.alien {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('alien.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: float 2s infinite ease-in-out;
+    image-rendering: pixelated;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Shot styling */
+.shot {
+    position: absolute;
+    width: 3px;
+    height: 15px;
+    background: linear-gradient(to top, #00ffff, #0088ff);
+    border-radius: 3px;
+    box-shadow: 0 0 5px #00ffff;
+    z-index: 5;
+}
+
+/* Alien shot styling */
+.alien-shot {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(to bottom, #ff5555, #ff0000);
+    border-radius: 2px;
+    box-shadow: 0 0 5px #ff0000;
+    z-index: 5;
+}
+
+/* Score and time display */
+#score, #timeDisplay, #livesDisplay {
+    position: fixed;
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    text-shadow: 0 0 5px #00ffff;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 50, 0.5);
+    border-radius: 5px;
+}
+
+#score {
+    top: 10px;
+    left: 10px;
+}
+
+#timeDisplay {
+    top: 10px;
+    right: 10px;
+}
+
+#livesDisplay {
+    bottom: 10px;
+    left: 10px;
+    color: #ff5555;
+}
+
+/* Menu styling */
+#menu {
+    background: linear-gradient(135deg, rgba(10,10,30,0.95) 0%, rgba(30,30,60,0.95) 100%);
+    position: fixed;
+    left: 10%;
+    right: 10%;
+    top: 20%;
+    bottom: 20%;
+    width: 80%;
+    height: 60%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 100, 255, 0.5);
+    border: 2px solid #445588;
+    z-index: 100;
+}
+
+/* Game over screen */
+#gameOver {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,30,0.9);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+#gameOver h2 {
+    color: #ff5555;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #ff0000;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+#finalScore {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* Button styling */
+button {
+    width: 200px;
+    height: 50px;
+    margin: 15px;
+    background: linear-gradient(to bottom, #4CAF50, #2E7D32);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-family: 'Orbitron', sans-serif;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #66BB6A, #388E3C);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+#playAgain {
+    background: linear-gradient(to bottom, #2196F3, #0D47A1);
+}
+
+#playAgain:hover {
+    background: linear-gradient(to bottom, #42A5F5, #1565C0);
+}
+
+/* Blur overlay */
+#blurr {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 30, 0.7);
+    display: none;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #container {
+        width: 95%;
+        height: 90vh;
+    }
+    
+    #board {
+        height: 85%;
+    }
+    
+    .alien-cont {
+        width: 30px;
+        height: 30px;
+    }
+    
+    #ship {
+        width: 40px;
+        height: 25px;
+    }
+    
+    button {
+        width: 160px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    #score, #timeDisplay, #livesDisplay {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #container {
+        height: 95vh;
+    }
+    
+    .alien-cont {
+        width: 25px;
+        height: 25px;
+    }
+    
+    #ship {
+        width: 35px;
+        height: 20px;
+    }
+    
+    #menu {
+        left: 5%;
+        right: 5%;
+        width: 90%;
+    }
+}
