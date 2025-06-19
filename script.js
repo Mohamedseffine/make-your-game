@@ -41,6 +41,8 @@ window.onload = function () {
         blurr: document.getElementById("blurr")
     };
 
+
+    console.log(elements)
     // Initialize the game
     function initGame() {
         setupUI();
