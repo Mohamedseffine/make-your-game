@@ -1,0 +1,9 @@
+Uncaught RangeError: repeat count must be non-negative
+
+clicking esc before play again start the timer and block the ship from moving still waiting for the next esc event
+
+level glitch
+
+time still clock in pause state
+
+

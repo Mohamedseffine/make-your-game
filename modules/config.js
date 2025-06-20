@@ -1,0 +1,40 @@
+
+export const gameState = {
+        pause: false,
+        shipX: 0,
+        speed: 300,
+        keysPressed: {},
+        shots: [],
+        alienShots: [],
+        currentscore: 0,
+        time: 0,
+        lastShotTime: Date.now(),
+        direction: 120,
+        lastFrameTime: 0,
+        alienMoveTimer: 0,
+        alienMoveInterval: 1/15,
+        lives: 3,
+        level: 1,
+        gameOver: false,
+        alienRows: 3,
+        alienCols: 8,
+        alienSpeedIncrease: 1.1,
+        alienFireRate: 0.005,
+        invincibleTimer: 0
+};
+
+export const elements = {
+        ship: document.getElementById("ship"),
+        board: document.getElementById("board"),
+        aliens: document.getElementById("aliens"),
+        score: document.getElementById("score"),
+        timeDisplay: document.getElementById("timeDisplay"),
+        livesDisplay: document.getElementById("livesDisplay"),
+        menu: document.getElementById("menu"),
+        continueBtn: document.getElementById("continue"),
+        restartBtn: document.getElementById("restart"),
+        playAgainBtn: document.getElementById("playAgain"),
+        gameOverScreen: document.getElementById("gameOver"),
+        finalScore: document.getElementById("finalScore"),
+        blurr: document.getElementById("blurr")
+};
