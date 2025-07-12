@@ -87,7 +87,7 @@ export function alienShoot() {
         const aliens = document.getElementsByClassName('alien-cont');
         if (aliens.length === 0) return;
         
-        if (Math.random() < gameState.alienFireRate * aliens.length) {
+        if (Math.random()* 5 < gameState.alienFireRate * aliens.length) {
             const shooter = aliens[Math.floor(Math.random() * aliens.length)];
             
             const shot = document.createElement("div");

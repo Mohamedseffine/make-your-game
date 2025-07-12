@@ -37,8 +37,10 @@ export function hitShip() {
         gameState.lives--;
         updateLivesDisplay();
         
-        if (gameState.lives <= 0) {
-            endGame();
+        if (gameState.lives <=0) {
+            endGame()
+        } else if (elements.aliens.childNodes.length === 0) {
+            endGame()
         } else {
             gameState.invincibleTimer = 2;
             elements.ship.style.opacity = "0.5";

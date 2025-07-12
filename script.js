@@ -1,9 +1,9 @@
 
-import { initGame} from "./modules/initgame.js";
+import { StartMenu } from "./modules/startMenu.js";
 
 // When page is loaded, start the game
 window.onload = () => {
-    initGame(); // This will internally call everything else
+    StartMenu()
 };
 
    

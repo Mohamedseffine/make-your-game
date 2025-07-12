@@ -26,8 +26,9 @@ export  function restartGame() {
         gameState.time = 0;
         gameState.level = 1;
         gameState.gameOver = false;
-        gameState.direction = 120;
+        gameState.direction = 1;
         gameState.alienFireRate = 0.005;
+        gameState.pause = false ;
         
         // Clear all shots
         gameState.shots.forEach(shot => shot.remove());
@@ -62,9 +63,10 @@ export function startTimers() {
 export  function nextLevel() {
         gameState.level++;
         gameState.direction *= gameState.alienSpeedIncrease;
-        gameState.alienFireRate *= 1.2;
+        gameState.alienFireRate *= 1.5;
         
         const levelUp = document.createElement('div');
+        levelUp.id = "next-level"
         levelUp.textContent = `LEVEL ${gameState.level}`;
         levelUp.style.position = 'fixed';
         levelUp.style.top = '50%';
@@ -75,9 +77,8 @@ export  function nextLevel() {
         levelUp.style.textShadow = '0 0 10px #00ffff';
         levelUp.style.zIndex = '100';
         document.body.appendChild(levelUp);
-        
-        setTimeout(() => {
-            levelUp.remove();
-            createAliens();
-        }, 2000);
+        setTimeout(()=>{
+                levelUp.remove()
+        }, 1000)
+        createAliens();
 }
