@@ -61,9 +61,14 @@ export function startTimers() {
 }
 
 export  function nextLevel() {
+
         gameState.level++;
         gameState.direction *= gameState.alienSpeedIncrease;
         gameState.alienFireRate *= 1.5;
+        gameState.shots.forEach(shot => shot.remove());
+        gameState.shots = [];
+        gameState.alienShots.forEach(shot => shot.remove());
+        gameState.alienShots = []
         
         const levelUp = document.createElement('div');
         levelUp.id = "next-level"
