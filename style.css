@@ -225,10 +225,14 @@ button:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 30, 0.7);
-    display: none;
+    display: flex;
+    flex-direction:column;
     z-index: 10;
     backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
