@@ -234,7 +234,7 @@ button:hover {
 }
 
 
-/* Responsive adjustments */
+/* Responsive design adjustments */
 @media (max-width: 768px) {
     #container {
         width: 95%;
