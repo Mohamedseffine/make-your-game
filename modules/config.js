@@ -22,7 +22,7 @@ export const gameState = {
   alienFireRate: 0.005,
   invincibleTimer: 0,
 };
-
+//the elements
 export const elements = {
   ship: document.getElementById("ship"),
   board: document.getElementById("board"),
