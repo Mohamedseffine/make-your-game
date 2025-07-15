@@ -25,7 +25,22 @@ export function moveAliens(deltaTime) {
         }
 
         // Check for wall collision
-        //
+        if (rightMost >= elements.board.clientWidth || leftMost <= 0) {
+            gameState.direction *= -1; // Flip direction
+
+            for (let alien of aliens) {
+                const currentTop = parseFloat(alien.style.top) || 0;
+                alien.style.top = `${currentTop + 20}px`;
+
+                if (
+                    currentTop + alien.offsetHeight + 20 >
+                    elements.board.clientHeight - elements.ship.offsetHeight - 20
+                ) {
+                    endGame();
+                    return;
+                }
+            }
+        }
 
         gameState.alienMoveTimer = 0;
     }
